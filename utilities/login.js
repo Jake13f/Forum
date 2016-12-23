@@ -13,7 +13,7 @@ module.exports.alreadyLoggedIn = (req, res, next) => {
 	if (!req.user)
 		next();
 	else
-		res.redirect('/');
+		res.redirect('/dashboard');
 }
 
 // Query the database to see if the user is already signed in.

@@ -5,8 +5,10 @@ var login = require('../utilities/login');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', login.alreadyLoggedIn, (req, res, next) => {
-   res.render('index');
+router.get('/', login.requireLogin, (req, res, next) => {
+   res.render('dashboard', {
+      username: req.session.user.username
+   });
 });
 
 module.exports = router;
