@@ -1,7 +1,15 @@
 extends layout
 
+block append scripts
+   script(src="/js/login.js")
+
 block content
+   
+   if error
+      h4= error
+   
    label(for="username") Username:
-      input(type="text" name="username" placeholder="username")
+      input#username(type="text" name="username" placeholder="Username")
    label(for="password") Password: 
-      input(type="password" name="username" placeholder="username")
+      input#password(type="password" name="username" placeholder="Password")
+   button#login-btn Login
