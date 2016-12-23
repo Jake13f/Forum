@@ -6,12 +6,18 @@ $(function() {
          password: $("#password").val()
       }
 
-      console.log(credentials);
-
       $.ajax({
-         url: '/login/validate',
+         url: '/login/login',
          method: 'POST',
-         data: credentials
+         data: credentials,
+         success: (errors) => {
+            if (errors.length > 0) {
+               // Display errors
+            } else {
+               // redirect to dashboard
+               window.location.replace("/");
+            }
+         }
       });
    });
 });

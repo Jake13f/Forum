@@ -10,6 +10,7 @@ var login = require('./utilities/login');
 
 var rIndex = require('./routes/index');
 var rLogin = require('./routes/login');
+var rLogout = require('./routes/logout');
 
 var app = express();
 
@@ -28,16 +29,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
 	cookieName: 'session',
 	secret: 'kjhsafweiqu43897&*9safhjkal',
-	duration: 30 * 60 * 1000,
-	activeDuration: 5 * 60 * 1000,
+	duration: 30 * 60 * 1000, // Persist for 30 minutes
+	activeDuration: 5 * 60 * 1000, // Increase duration by 5 minutes per load
 }));
 app.use(login.checkLogin);
 
 // Specify routes
 app.use('/', rIndex);
 app.use('/login', rLogin);
-
-
+app.use('/logout', rLogout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
