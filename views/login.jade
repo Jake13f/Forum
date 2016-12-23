@@ -1,0 +1,12 @@
+extends layout
+
+block append scripts
+   script(src="/js/login.js")
+
+block content
+         
+   label(for="username") Username:
+      input#username(type="text" name="username" placeholder="Username")
+   label(for="password") Password: 
+      input#password(type="password" name="password" placeholder="Password")
+   button#login-btn Login
