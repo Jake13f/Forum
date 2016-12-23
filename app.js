@@ -8,8 +8,8 @@ var session = require('client-sessions');
 var knex = require('./utilities/knex');
 var login = require('./utilities/login');
 
-var routes = require('./routes/index');
-var login = require('./routes/login');
+var rIndex = require('./routes/index');
+var rLogin = require('./routes/login');
 
 var app = express();
 
@@ -34,8 +34,8 @@ app.use(session({
 app.use(login.checkLogin);
 
 // Specify routes
-app.use('/', routes);
-app.use('/login', login);
+app.use('/', rIndex);
+app.use('/login', rLogin);
 
 
 
