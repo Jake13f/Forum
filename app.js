@@ -28,9 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Authentication
 app.use(session({
 	cookieName: 'session',
-	secret: 'kjhsafweiqu43897&*9safhjkal',
+	secret: 'kjhsafweiqu43897&*9safhjkal', // Need to make more random and longer.
 	duration: 30 * 60 * 1000, // Persist for 30 minutes
 	activeDuration: 5 * 60 * 1000, // Increase duration by 5 minutes per load
+   httpOnly: true,
+   ephemeral: true
 }));
 app.use(login.checkLogin);
 

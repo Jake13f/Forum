@@ -1,11 +1,11 @@
 var express = require('express');
 var knex = require('../utilities/knex.js');
+var login = require('../utilities/login');
 
 var router = express.Router();
 
 // Render the login page to the user
-// TODO: Redirect if already signed in.
-router.get('/', (req, res, next) => {
+router.get('/', login.alreadyLoggedIn, (req, res, next) => {
    res.render('login');
 });
 

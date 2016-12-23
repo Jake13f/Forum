@@ -8,6 +8,15 @@ module.exports.requireLogin = (req, res, next) => {
 		next();
 };
 
+// Check to see if the user is already logged in.
+module.exports.alreadyLoggedIn = (req, res, next) => {
+	if (!req.user)
+		next();
+	else
+		res.redirect('/');
+}
+
+// Query the database to see if the user is already signed in.
 module.exports.checkLogin = (req, res, next) => {
 	if (req.session && req.session.user) {
 		knex('users').select().where({
