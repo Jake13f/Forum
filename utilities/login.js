@@ -19,14 +19,14 @@ module.exports.alreadyLoggedIn = (req, res, next) => {
 // Query the database to see if the user is already signed in.
 module.exports.checkLogin = (req, res, next) => {
 	if (req.session && req.session.user) {
-		knex('users').select().where({
+		knex('users').where({
 			username: req.session.user.username
-		}).then((user) => {
-			if (user.length > 0) {
-				req.user = user[0];
+		}).first().then((user) => {
+			if (user) {
+				req.user = user;
 				delete req.user.password; // delete the password from the session
-				req.session.user = user[0]; // refresh the session value
-				res.locals.user = user[0];
+				req.session.user = user; // refresh the session value
+				res.locals.user = user;
 			}
 			// finishing processing the middleware and run the route
 			next();

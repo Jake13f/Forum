@@ -15,21 +15,16 @@ router.get('/', login.alreadyLoggedIn, (req, res, next) => {
 router.post('/validate', (req, res, next) => {
 	var errors = [];
 
-   knex('users').select().where({
+   knex('users').where({
       username: req.body.username
-   }).then((user) => {
-      if (user.length > 0) { // There is a user with the proper username in the database
-			if (req.body.password === user[0].password) { // check if the passwords match
-				req.session.user = user[0]; // sets a cookie with the user's info
-				res.send(errors);
-			} else {
-				errors.push("Invalid email or password.");
-				res.send(errors);
-			}
-      } else {
+   }).first().then((user) => {
+		if (user && (req.body.password === user.password)) { // check if the passwords match and the user exists
+			req.session.user = user; // sets a cookie with the user's info
+			res.send(errors);
+		} else {
 			errors.push("Invalid email or password.");
 			res.send(errors);
-      }
+		}
    });
 });
 
