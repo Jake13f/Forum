@@ -1,16 +1,17 @@
 var env = {
    local: {
-      host: '127.0.0.1',
+      host: 'localhost',
+      port: 3306,
       user: 'root',
       password: '',
-      database: 'Forums'
+      database: 'forums'
    }
 }
 
 // The basic knex setup
 var knex = require('knex')({
    client: 'mysql',
-   connection: env[process.env.NODE_ENV]
+   connection: env.local
 });
 
 module.exports = knex;
