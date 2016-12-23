@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 // Query the database to verify proper user info
 // @param username - the specified login name to check
 // @param password - the password linked to the account
-router.post('/login', (req, res, next) => {
+router.post('/validate', (req, res, next) => {
 	var errors = [];
 
    knex('users').select().where({

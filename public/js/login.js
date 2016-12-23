@@ -7,7 +7,7 @@ $(function() {
       }
 
       $.ajax({
-         url: '/login/login',
+         url: '/login/validate',
          method: 'POST',
          data: credentials,
          success: (errors) => {
