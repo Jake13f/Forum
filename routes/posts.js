@@ -4,7 +4,7 @@ var login = require('../utilities/login');
 
 var router = express.Router();
 
-// Return the basic forum posts
+// Returns array of forum posts
 router.post('/', login.requireLogin, (req, res, next) => {
    // Select the message and grab the proper user information
    knex('posts').select('users.username', 'posts.message', 'posts.date_posted')
@@ -13,6 +13,9 @@ router.post('/', login.requireLogin, (req, res, next) => {
    .then((posts) => { res.send(posts); });
 });
 
+// Posts the specified post to the database and returns the updated posts
+// @param message the message to be posted
+// @returns array of posts; if there is a query error sends a 404
 router.post('/submit', login.requireLogin, (req, res, next) => {
    var insertObj = {
       posted_by: req.user.id,
