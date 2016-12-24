@@ -12,6 +12,7 @@ var rIndex = require('./routes/index');
 var rLogin = require('./routes/login');
 var rLogout = require('./routes/logout');
 var rDashboard = require('./routes/dashboard');
+var rPosts = require('./routes/posts');
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/', rIndex);
 app.use('/login', rLogin);
 app.use('/logout', rLogout);
 app.use('/dashboard', rDashboard);
+app.use('/posts', rPosts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
