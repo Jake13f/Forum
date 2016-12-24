@@ -19,7 +19,7 @@ $(function() {
                });
             } else {
                // redirect to dashboard
-               window.location.replace("/");
+               window.location.replace("/dashboard");
             }
          }
       });
