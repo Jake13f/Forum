@@ -11,6 +11,7 @@ var login = require('./utilities/login');
 var rIndex = require('./routes/index');
 var rLogin = require('./routes/login');
 var rLogout = require('./routes/logout');
+var rDashboard = require('./routes/dashboard');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use(login.checkLogin);
 app.use('/', rIndex);
 app.use('/login', rLogin);
 app.use('/logout', rLogout);
+app.use('/dashboard', rDashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

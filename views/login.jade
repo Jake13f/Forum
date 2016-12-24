@@ -1,12 +1,24 @@
 extends layout
 
+block append css
+   link(rel='stylesheet', href='/css/login.css')
+
 block append scripts
    script(src="/js/login.js")
 
 block content
-         
-   label(for="username") Username:
-      input#username(type="text" name="username" placeholder="Username")
-   label(for="password") Password: 
-      input#password(type="password" name="password" placeholder="Password")
-   button#login-btn Login
+
+   .login-container
+   
+      h1.login-header Login
+
+      .login-block
+         .login-input-area
+            .input-title
+               span Username
+            input#username(type="text" name="username" placeholder="Username")
+         .login-input-area
+            .input-title
+               span Password
+            input#password(type="password" name="password" placeholder="Password")
+         button#login-btn Login

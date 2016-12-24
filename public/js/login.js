@@ -13,6 +13,10 @@ $(function() {
          success: (errors) => {
             if (errors.length > 0) {
                // Display errors
+               errors.forEach((error) => { // display each error
+                  alertify.logPosition('top center');
+                  alertify.error(error);
+               });
             } else {
                // redirect to dashboard
                window.location.replace("/");

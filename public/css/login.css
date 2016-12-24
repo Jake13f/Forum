@@ -1,0 +1,52 @@
+.header {
+   text-align: center;
+}
+
+.login-container {
+   position: relative;
+   width: 500px;
+   margin: 0 auto;
+   padding: 30px 10px;
+
+   border-radius: 5px;
+   border: 1px solid #000000;
+   background-color: #f7f7f7;
+
+   text-align: center;
+}
+.login-header {
+   padding: 10px 0;
+   margin: 0;
+}
+.login-input-area {
+   padding: 10px;
+}
+.login-block input {
+   width: 300px;
+   height: 30px;
+
+   text-align: center;
+   line-height: 30px;
+   font-size: 20px;
+
+   border-radius: 5px;
+   border: 1px solid #000000;
+   outline: none;
+}
+.login-block button {
+   width: 300px;
+   line-height: 30px;
+   font-size: 15px;
+
+   color: white;
+   border-radius: 5px;
+   border: 1px solid #000000;
+   background-color: rgb(73, 68, 255);
+   outline: none;
+
+   transition: .2s background-color linear;
+}
+.login-block button:hover {
+   background-color: #14f11d;
+   cursor: pointer;
+}
