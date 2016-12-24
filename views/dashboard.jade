@@ -1,6 +1,10 @@
 extends layout
 
+block append scripts
+   script(src="/js/dashboard.js")
+
 block content
    h1 Welcome #{username}
-   
    a(href="logout") Logout
+
+   #textArea
