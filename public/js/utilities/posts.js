@@ -5,8 +5,8 @@ function getPosts (cb) {
    $.ajax({
       url: '/posts',
       method: 'POST',
-      success: (posts) => { cb(posts); },
-      error: () => { cb(null, true); }
+      success: function (posts) { cb(posts); },
+      error: function () { cb(null, true); }
    });
 }
 
@@ -19,8 +19,8 @@ function submitPost (message, cb) {
       url: '/posts/submit',
       method: 'POST',
       data: { message: message },
-      success: (posts) => { cb(posts); },
-      error: () => { cb(null, true); }
+      success: function (posts) { cb(posts); },
+      error: function () { cb(null, true); }
    });
 }
 
@@ -43,7 +43,7 @@ function markUpPost (user, message, timestamp) {
 // @return html - the html string generated
 function markUpPostArray (posts) {
    var html = "";
-   posts.forEach((post) => {
+   posts.forEach(function (post) {
       html += markUpPost(post.username, post.message, new Date(post.date_posted));
    });
    return html;
