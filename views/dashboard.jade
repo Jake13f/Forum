@@ -3,16 +3,11 @@ extends layout
 block append css
    link(rel="stylesheet" href="/css/dashboard.css")
 
-block append scripts
-   script(src="/js/utilities/posts.js")
-   script(src="/js/dashboard.js")
-
 block content
    h1 Welcome #{username}
    a(href="logout") Logout
    
-   #posts
-
-   #quillArea
-      #quillInput
-      button#submitPost Save
+   #threads
+      each thread in threads
+         .thread
+            a(href="/thread/#{thread.id}")= thread.name
