@@ -17,11 +17,11 @@ $(function() {
             if (success)
                window.location.reload(); // Reload the page
             else // If errors show them
-               if (error == 403)
+               if (error == 403) // Error code that the user isn't logged in
                   alertify
                      .logPosition('top right')
                      .error("Woops! You need to sign in before posting :(");
-               else
+               else // Show any other errors that occurred. 
                   alertify
                      .logPosition('top right')
                      .error("Woops! There was an error posting :(");
