@@ -9,7 +9,6 @@ var router = express.Router();
 router.get('/', (req, res, next) => {
    threads.getThreads((threads) => {
       res.render('dashboard', {
-         username: ((req.session.user) ? req.session.user.username : undefined),
          threads: threads
       });
    });

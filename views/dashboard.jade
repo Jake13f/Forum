@@ -4,9 +4,8 @@ block append css
    link(rel="stylesheet" href="/css/dashboard.css")
 
 block content
-   if username
-      h1 Welcome #{username}
-      a(href="logout") Logout
+   if user
+      h1 Welcome #{user.username}
    else
       h1 Welcome!  Please Sign in to be able to post.
    
