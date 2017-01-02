@@ -1,6 +1,15 @@
 extends layout
 
+block append css
+   link(rel="stylesheet" href="/css/dashboard.css")
+
 block content
-   h1 Welcome #{username}
+   if user
+      h1 Welcome #{user.username}
+   else
+      h1 Welcome!  Please Sign in to be able to post.
    
-   a(href="logout") Logout
+   #threads
+      each thread in threads
+         .thread
+            a(href="/thread/#{thread.id}")= thread.name

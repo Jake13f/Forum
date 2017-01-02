@@ -1,0 +1,23 @@
+#posts {
+   width: 75%;
+   margin: 10px auto;
+   text-align: center;
+}
+.post {
+   height: 100px;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+.post:first-child {
+   height: 100px;
+   border: 1px solid black;
+}
+
+#quillArea {
+   width: 75%;
+   margin: 0 auto;
+}
+#quillInput {
+   height: 150px;
+}
