@@ -6,10 +6,10 @@ var threads = require('../utilities/threads');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', login.requireLogin, (req, res, next) => {
+router.get('/', (req, res, next) => {
    threads.getThreads((threads) => {
       res.render('dashboard', {
-         username: req.session.user.username,
+         username: ((req.session.user) ? req.session.user.username : undefined),
          threads: threads
       });
    });

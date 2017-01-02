@@ -20,7 +20,7 @@ router.get('/:threadID', (req, res, next) => {
 // Posts the specified post to the database and returns the updated posts
 // @param message the message to be posted
 // @returns array of posts; if there is a query error sends a 404
-router.post('/submit', login.requireLogin, (req, res, next) => {
+router.post('/submit', login.AJAXrequireLogin, (req, res, next) => {
    var insertObj = {
       posted_by: req.user.id,
       thread_id: req.session.threadID,

@@ -7,6 +7,6 @@ function submitPost (message, cb) {
       method: 'POST',
       data: { message: message },
       success: function (posts) { cb(true); },
-      error: function () { cb(false); }
+      error: function (x, status, error) { cb(false, x.status); }
    });
 }

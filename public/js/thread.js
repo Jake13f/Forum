@@ -13,13 +13,18 @@ $(function() {
 
       if (length > 1 && length <= 1000) {
          // There is data and its in the reasonable range
-         submitPost(text, function (success) {
+         submitPost(text, function (success, error) {
             if (success)
                window.location.reload(); // Reload the page
             else // If errors show them
-               alertify
-               .logPosition('top right')
-               .error("Woops! There was an error loading the forum posts :(");
+               if (error == 403)
+                  alertify
+                     .logPosition('top right')
+                     .error("Woops! You need to sign in before posting :(");
+               else
+                  alertify
+                     .logPosition('top right')
+                     .error("Woops! There was an error posting :(");
          });
       }
    });
