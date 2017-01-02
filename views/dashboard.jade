@@ -1,15 +1,23 @@
 extends layout
 
 block append css
-   link(rel="stylesheet" href="/css/dashboard.css")
+   link(rel='stylesheet', href='/css/threads.css')
+
+block append scripts
+   script(src="/js/dashboard.js")
 
 block content
-   if user
-      h1 Welcome #{user.username}
-   else
-      h1 Welcome!  Please Sign in to be able to post.
-   
-   #threads
-      each thread in threads
-         .thread
-            a(href="/thread/#{thread.id}")= thread.name
+   table#threads
+      thead
+         tr
+            th Name
+            th Posts
+      tbody
+         each thread in threads
+            tr
+               td
+                  .ellipsis
+                     a.tname(href="/thread/#{thread.id}")= thread.name
+               td
+                  .ellipsis
+                  | 12

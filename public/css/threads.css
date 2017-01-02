@@ -1,0 +1,10 @@
+#threads {
+   text-align: left;
+   table-layout: fixed;
+}
+#threads td, #threads th {
+   width: 100% !important;
+}
+#threads tr {
+   border: 1px solid #000;
+}

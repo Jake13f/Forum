@@ -19,7 +19,7 @@ body {
    color: #fff;
    text-decoration: none;
 
-   padding: 15px;
+   padding: 16px;
    line-height: 50px;
 
    transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11);
@@ -36,4 +36,10 @@ body {
 
 a {
    color: #00B7FF;
+}
+
+.ellipsis {
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
 }
