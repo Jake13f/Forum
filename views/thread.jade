@@ -8,16 +8,17 @@ block append scripts
    script(src="/js/thread.js")
 
 block content
-   #posts
-      each post in posts
-         .post
-            .posted-by
-               h3= post.username
-            .message-area
-               .message
-                  p= post.message
-               .date-posted
-                  em= post.date_posted
+   table#posts
+      tbody
+         each post in posts
+            tr.post
+               td.posted-by
+                  h3= post.username
+               td.message-area
+                  .message
+                     p= post.message
+                  .date-posted
+                     em= post.date_posted
 
    #quillArea
       #quillInput

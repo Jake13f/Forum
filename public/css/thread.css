@@ -1,12 +1,11 @@
 #posts {
    width: 75%;
    margin: 10px auto;
+   border-collapse: collapse;
    text-align: center;
 }
 .post {
-   /*display: flex;
-   align-items: center;*/
-   min-height: 100px;
+   height: 100px;
    border-bottom: 1px solid #d8d8d8;
    border-left: 1px solid #d8d8d8;
    border-right: 1px solid #d8d8d8;
@@ -17,31 +16,22 @@
 .post:nth-child(even) {
    background-color: #f5f5f5;
 }
-.posted-by,
-.message-area {
-   /*display: flex;
-   flex-direction: column;
-   align-items: center;*/
-   height: 100%;
-   display: inline-block;
-}
 .posted-by {
-   /*justify-content: center;*/
    width: 15%;
-   min-width: 125px;
    border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 .message-area {
-   width: 85%;
+   padding: 15px;
+   text-align: left;
 }
-.message-area p {
-   height: 50%;
+.message p {
    margin: 0;
 }
-.message {
-   width: inherit;
-   word-wrap: break-word;
+.date-posted {
+   font-size: .8em;
+   padding: 5px 0;
 }
+
 #quillArea {
    width: 75%;
    margin: 0 auto;
