@@ -1,10 +1,55 @@
-#threads {
-   text-align: left;
-   table-layout: fixed;
+#threads .search {
+   float: right;
 }
-#threads td, #threads th {
-   width: 100% !important;
+#threads .thread-headers div {
+   display: inline-block;
 }
-#threads tr {
-   border: 1px solid #000;
+#threads .thread-headers div h2 {
+   margin: 0;
+   padding: 5px 10px;
+}
+#threads ul {
+   border: 1px solid #d8d8d8;
+   list-style: none;
+}
+#threads ul, #threads .thread-headers {
+   width: 75%;
+   padding: 0;
+   margin: 0 auto;
+}
+#threads li {
+   color: #000;
+   transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11), .2s color cubic-bezier(0, 0, 0.23, 1.11);
+}
+#threads li:nth-child(even) {
+   background-color: #f5f5f5;
+}
+#threads li:hover {
+   color: #fff;
+   background-color: #ff4444;
+}
+#threads li .container {
+   height: 50px;
+}
+#threads li .container div {
+   display: inline-block;
+}
+#threads a {
+   color: inherit;
+}
+#threads p {
+   margin: 0;
+   padding: 0 10px;
+   line-height: 50px;
+}
+#threads .tname {
+   width: 80%;
+}
+#threads li .tname {
+   width: calc(80% - 1px);
+   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#threads .posts {
+   width: 20%;
+   text-align: center;
 }

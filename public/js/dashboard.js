@@ -1,3 +1,7 @@
 $(function () {
-   $("#threads").DataTable();
+   var options = {
+      valueNames: [ 'tname', 'posts' ]
+   };
+
+   var userList = new List('threads', options);
 });

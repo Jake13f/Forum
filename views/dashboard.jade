@@ -7,17 +7,21 @@ block append scripts
    script(src="/js/dashboard.js")
 
 block content
-   table#threads
-      thead
-         tr
-            th Name
-            th Posts
-      tbody
+   #threads
+      .secondary-nav
+         input.search(placeholder="Search")
+
+      .thread-headers
+         .tname
+            h2.sort(data-sort='tname') Name
+         .posts
+            h2.sort(data-sort='posts') # of Posts
+      ul.list
          each thread in threads
-            tr
-               td
-                  .ellipsis
-                     a.tname(href="/thread/#{thread.id}")= thread.name
-               td
-                  .ellipsis
-                     | #{thread.count}
+            li
+               a(href="/thread/#{thread.id}")
+                  .container
+                     .tname
+                        p= thread.name
+                     .posts
+                        p= thread.count
