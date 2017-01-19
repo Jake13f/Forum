@@ -8,30 +8,33 @@
    margin: 0;
    padding: 5px 10px;
 }
-#threads ul {
+#threads ul.list {
    border: 1px solid #d8d8d8;
    list-style: none;
 }
-#threads ul, #threads .thread-headers {
+#threads ul.list,
+#threads .thread-headers,
+#threads .pagination,
+#threads .pages {
    width: 75%;
    padding: 0;
    margin: 0 auto;
 }
-#threads li {
+#threads .list li {
    color: #000;
    transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11), .2s color cubic-bezier(0, 0, 0.23, 1.11);
 }
-#threads li:nth-child(even) {
+#threads .list li:nth-child(even) {
    background-color: #f5f5f5;
 }
-#threads li:hover {
+#threads .list li:hover {
    color: #fff;
    background-color: #ff4444;
 }
-#threads li .container {
+#threads .list li .container {
    height: 50px;
 }
-#threads li .container div {
+#threads .list li .container div {
    display: inline-block;
 }
 #threads a {
@@ -52,4 +55,15 @@
 #threads .posts {
    width: 20%;
    text-align: center;
+}
+ul.pagination {
+   display: inline-block;
+   list-style: none;
+}
+.pagination li {
+   display: inline-block;
+   padding: 5px;
+}
+.pagination li.active {
+   color: #ff4444;
 }
