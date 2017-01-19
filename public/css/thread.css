@@ -26,10 +26,11 @@
 }
 .message p {
    margin: 0;
+   min-height: 40px;
 }
 .date-posted {
    font-size: .8em;
-   padding: 5px 0;
+   padding: 15px 0 0 0;
 }
 
 #quillArea {
