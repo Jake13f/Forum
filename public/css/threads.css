@@ -15,7 +15,7 @@
 #threads ul.list,
 #threads .thread-headers,
 #threads .pagination,
-#threads .pages {
+#threads .pages-container {
    width: 75%;
    padding: 0;
    margin: 0 auto;
@@ -55,6 +55,9 @@
 #threads .posts {
    width: 20%;
    text-align: center;
+}
+#threads .pages {
+   padding: 5px 10px;
 }
 ul.pagination {
    display: inline-block;
