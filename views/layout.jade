@@ -5,10 +5,32 @@ html
       
       block css
          link(rel='stylesheet', href='/css/style.css')
-         link(rel='stylesheet', href='/css/libraries/alertify/alertify.css')
+         link(rel='stylesheet', href='/libraries/alertify/alertify.css')
+         link(rel='stylesheet', href='/libraries/quill/quill.snow.css')
+
    body
-      block content
+      #nav
+         a(href="/dashboard") Dashboard
+         a(href="#") Test1
+         a(href="#") Test2
+         a(href="#") Test3
+         
+         //- Show the user is logged in or out
+         #status
+            if user
+               span= user.username
+               a(href="/logout") Logout
+            else
+               a(href="/login") Login
+   
+      #content
+         block content
+      
    footer
       block scripts
-         script(src="/js/libraries/jquery-3.1.1.min.js")
-         script(src="/js/libraries/alertify/alertify.js")
+         script(src="/libraries/jquery-3.1.1.min.js")
+         script(src="/libraries/list/list.js")
+         script(src="/libraries/list/list_pagination.js")
+         script(src="/libraries/alertify/alertify.js")
+         script(src="/libraries/quill/quill.js")
+         script(src="/js/utilities/quick_quill.js")

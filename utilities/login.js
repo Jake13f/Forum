@@ -3,7 +3,16 @@ var knex = require('./knex');
 // Verify the user is logged in.  If not send them to the login screen
 module.exports.requireLogin = (req, res, next) => {
 	if (!req.user)
-   	res.redirect('/login');
+		res.redirect('/login');
+	else
+		next();
+};
+
+// Verify the user is logged in.  If not send the proper resonse for an ajax call to
+// let the client know they need logged in.
+module.exports.AJAXrequireLogin = (req, res, next) => {
+	if (!req.user)
+		res.status(403).send();
 	else
 		next();
 };

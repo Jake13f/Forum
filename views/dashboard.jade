@@ -1,6 +1,32 @@
 extends layout
 
+block append css
+   link(rel='stylesheet', href='/css/threads.css')
+
+block append scripts
+   script(src="/js/dashboard.js")
+
 block content
-   h1 Welcome #{username}
-   
-   a(href="logout") Logout
+   #threads
+      .secondary-nav
+         input.search(placeholder="Search")
+
+      .thread-headers
+         .tname
+            h2.sort(data-sort='tname') Name
+         .posts
+            h2.sort(data-sort='posts') # of Posts
+      ul.list
+         each thread in threads
+            li
+               a(href="/thread/#{thread.id}")
+                  .container
+                     .tname
+                        p= thread.name
+                     .posts
+                        p= thread.count
+
+      .pages-container
+         .pages
+            span Page(s): 
+            ul.pagination

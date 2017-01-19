@@ -1,8 +1,45 @@
 body {
-   padding: 50px;
-   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+   margin: 0;
+   padding: 0;
+}
+
+#content {
+   padding: 16px;
+}
+
+#nav {
+   height: 50px;
+
+   color: #fff;
+   background-color: rgb(41, 41, 41);
+}
+#nav a {
+   color: #fff;
+   text-decoration: none;
+
+   padding: 16px;
+   line-height: 50px;
+
+   transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11);
+}
+#nav a:hover {
+   background-color: #ff4444;
+}
+#nav #status {
+   float: right;
+}
+#nav #status span {
+   margin: 0 5px;
 }
 
 a {
    color: #00B7FF;
+}
+
+.ellipsis {
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
 }
