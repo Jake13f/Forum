@@ -11,9 +11,13 @@ block content
    #posts
       each post in posts
          .post
-            .posted-by= post.username
-            .message= post.message
-            .date-posted= post.date_posted
+            .posted-by
+               h3= post.username
+            .message-area
+               .message
+                  p= post.message
+               .date-posted
+                  em= post.date_posted
 
    #quillArea
       #quillInput
