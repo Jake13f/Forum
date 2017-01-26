@@ -1,5 +1,5 @@
 h2 {
-   text-align: center;  
+   text-align: center;
 }
 
 #posts {
@@ -39,7 +39,7 @@ h2 {
 
 #quillArea {
    width: 75%;
-   margin: 0 auto;
+   margin: 10px auto;
 }
 #quillInput {
    height: 150px;
