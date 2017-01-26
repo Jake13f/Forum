@@ -36,6 +36,11 @@ h2 {
    font-size: .8em;
    padding: 15px 0 0 0;
 }
+#posts tfoot {
+   border-left: 1px solid #d8d8d8;
+   border-bottom: 1px solid #d8d8d8;
+   border-right: 1px solid #d8d8d8;
+}
 
 #quillArea {
    width: 75%;
@@ -43,4 +48,20 @@ h2 {
 }
 #quillInput {
    height: 150px;
+}
+
+button#submitPost {
+   width: 150px;
+   height: 30px;
+   margin: 10px 0;
+   font-size: 1.1em;
+   color: white;
+   background-color: rgb(0, 123, 255);
+   border: none;
+   outline: none;
+   cursor: pointer;
+   transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11);
+}
+button#submitPost:hover {
+   background-color: rgb(0, 182, 255);
 }

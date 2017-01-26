@@ -24,10 +24,12 @@ block content
                      .date-posted
                         em= post.date_posted
                         
-      .pages-container
-         .pages
-            span Page(s): 
-            ul.pagination
+         tfoot
+            tr
+               td(colspan="2").pages-container
+                  .pages
+                     span Page(s): 
+                     ul.pagination
 
    #quillArea
       #quillInput
