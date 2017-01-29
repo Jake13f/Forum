@@ -1,0 +1,22 @@
+.pagination,
+.pages-container {
+   padding: 0;
+   margin: 0 auto;
+}
+.pages-container .pages {
+   padding: 5px 10px;
+}
+.pages-container ul.pagination {
+   display: inline-block;
+   list-style: none;
+}
+.pages-container .pagination li {
+   display: inline-block;
+   padding: 5px;
+}
+.pages-container .pagination li.active {
+   color: #ff4444;
+}
+.pages-container a {
+   color: inherit;
+}

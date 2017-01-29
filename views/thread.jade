@@ -2,19 +2,35 @@ extends layout
 
 block append css
    link(rel="stylesheet" href="/css/thread.css")
+   link(rel='stylesheet', href='/css/pagination.css')
 
 block append scripts
    script(src="/js/utilities/posts.js")
    script(src="/js/thread.js")
 
 block content
-   #posts
-      each post in posts
-         .post
-            .posted-by= post.username
-            .message= post.message
-            .date-posted= post.date_posted
+   h2= title
+
+   #posts-container
+      table#posts
+         tbody.list
+            each post in posts
+               tr.post
+                  td.posted-by
+                     h3= post.username
+                  td.message-area
+                     .message
+                        p= post.message
+                     .date-posted
+                        em= post.date_posted
+                        
+         tfoot
+            tr
+               td(colspan="2").pages-container
+                  .pages
+                     span Page(s): 
+                     ul.pagination
 
    #quillArea
       #quillInput
-      button#submitPost Save
+      button#submitPost Submit

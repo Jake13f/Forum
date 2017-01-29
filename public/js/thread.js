@@ -2,6 +2,19 @@ $(function() {
    // ************ //
    // Initial Load //
    // ************ //
+
+   // Options for the thread list
+   var listOpts = {
+      page: 10,
+      plugins: [
+         ListPagination({
+            innerWindow: 2,
+            outerWindow: 2
+         })
+      ]
+   };
+
+   var userList = new List('posts-container', listOpts); // Initialize thread list
    var quill = defaultQuill('#quillInput'); // Initialize Quill text area
 
    // ****** //
@@ -21,7 +34,7 @@ $(function() {
                   alertify
                      .logPosition('top right')
                      .error("Woops! You need to sign in before posting :(");
-               else // Show any other errors that occurred. 
+               else // Show any other errors that occurred.
                   alertify
                      .logPosition('top right')
                      .error("Woops! There was an error posting :(");

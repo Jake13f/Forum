@@ -4,8 +4,9 @@ var knex = require('../utilities/knex.js');
 // @param thread - the id of the thread to get the posts from
 // @param cb - callback function sending the desired posts.
 module.exports.getPosts = (thread, cb) => {
-   knex('posts').select('users.username', 'posts.message', 'posts.date_posted')
+   knex('posts').select('users.username', 'posts.message', 'posts.date_posted', 'threads.name')
    .innerJoin('users', 'users.id', 'posts.posted_by')
+   .innerJoin('threads', 'threads.id', 'posts.thread_id')
    .where({ thread_id: thread })
    .catch((error) => { cb(); })
    .then((posts) => { cb(posts); });

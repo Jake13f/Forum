@@ -9,9 +9,9 @@ var router = express.Router();
 router.get('/:threadID', (req, res, next) => {
    var threadID = req.params.threadID;
    req.session.threadID = parseInt(threadID, 10); // Specified base 10 number system
-
    posts.getPosts(threadID, (results) => {
       res.render('thread', {
+         title: results[0].name,
          posts: results
       });
    });
