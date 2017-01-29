@@ -1,0 +1,13 @@
+extends layout
+
+//- block append css
+block append scripts
+   script(src="/js/utilities/threads.js")
+   script(src="/js/createThread.js")
+
+block content
+   h2 Create a new thread!
+   
+   #options
+      input#name(type="text" tabindex="1" placeholder="Thread Name")
+      button#submit Create!
