@@ -17,7 +17,7 @@ $(function() {
          // the request.
          createThread(options, function (thread, error) {
             if (thread)
-               alertify.success(JSON.stringify(thread)); // Reload the page
+               window.location = "/thread/" + thread; // Load the new thread's page
             else // If errors show them
                if (error == 403) // Error code that the user isn't logged in
                   alertify
