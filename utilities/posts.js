@@ -19,5 +19,10 @@ module.exports.submitPost = (post, cb) => {
    knex('posts')
    .insert(post)
    .catch((error) => { cb(false); })
-   .then(() => { cb(true); });
+   .then(() => {
+      knex('threads')
+      .where("id", post.thread_id)
+      .update('last_updated', new Date())
+      .then(() => { cb(true); });
+   });
 };

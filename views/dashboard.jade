@@ -23,6 +23,7 @@ block content
                tr
                   td
                      a.name(href="/thread/#{thread.id}")= thread.name
+                        em(style="float:right;")= thread.last_updated
                   td.tcount
                      a.posts(href="/thread/#{thread.id}")= thread.count
          tfoot
