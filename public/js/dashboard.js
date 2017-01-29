@@ -2,7 +2,7 @@ $(function () {
    // Options for the thread list
    var options = {
       page: 10,
-      valueNames: [ 'tname', 'posts' ],
+      valueNames: [ 'name', 'posts' ],
       plugins: [
          ListPagination({
             innerWindow: 2,
