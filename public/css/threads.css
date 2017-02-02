@@ -41,6 +41,10 @@
    border-left: 1px solid rgba(0, 0, 0, 0.1);
    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+#threads td em {
+   float:right;
+   font-size: .8em;
+}
 #threads tfoot {
    text-align: center;
 }

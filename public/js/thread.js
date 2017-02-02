@@ -32,12 +32,10 @@ $(function() {
             else // If errors show them
                if (error == 403) // Error code that the user isn't logged in
                   alertify
-                     .logPosition('top right')
-                     .error("Woops! You need to sign in before posting :(");
+                     .error("Woops! You need to sign in before posting.");
                else // Show any other errors that occurred.
                   alertify
-                     .logPosition('top right')
-                     .error("Woops! There was an error posting :(");
+                     .error("Woops! There was an error posting.");
          });
       }
    });

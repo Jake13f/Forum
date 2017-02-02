@@ -14,15 +14,20 @@ block content
    #posts-container
       table#posts
          tbody.list
-            each post in posts
-               tr.post
-                  td.posted-by
-                     h3= post.username
-                  td.message-area
-                     .message
-                        p= post.message
-                     .date-posted
-                        em= post.date_posted
+            if posts[0].message
+               each post in posts
+                  tr.post
+                     td.posted-by
+                        h3= post.username
+                     td.message-area
+                        .message
+                           p= post.message
+                        .date-posted
+                           em= post.date_posted
+            else
+               tr
+                  td(colspan="2").post
+                     h4 No posts have been made yet!
                         
          tfoot
             tr

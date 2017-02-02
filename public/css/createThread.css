@@ -1,0 +1,42 @@
+#options {
+   width: 90%;
+   max-width: 400px;
+
+   text-align: center;
+   margin: 0 auto;
+}
+#options label {
+   display: block;
+   margin: 0;
+   text-align: left;
+}
+#options input {
+   width: 100%;
+   font-size: 20px;
+
+   margin-bottom: 10px;
+   padding-left: 5px;
+   padding-right: 5px;
+   line-height: 30px;
+}
+
+#finalize {
+   width: 100%;
+   text-align: right;
+}
+#finalize a {
+   margin: 0 10px;
+   text-decoration: none;
+}
+#finalize button {
+   width: 100px;
+   height: 35px;
+
+   font-size: 18px;
+   color: white;
+   background-color: rgb(255, 0, 0);
+   border-radius: 3px;
+}
+#finalize button:hover {
+   background-color: rgb(225, 0, 0);
+}
