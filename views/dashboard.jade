@@ -23,6 +23,10 @@ block content
                tr
                   td
                      a.name(href="/thread/#{thread.id}")= thread.name
+                        if thread.last_updated == 0 
+                           em.last_updated Today
+                        else
+                           em.last_updated #{thread.last_updated} days ago
                   td.tcount
                      a.posts(href="/thread/#{thread.id}")= thread.count
          tfoot
