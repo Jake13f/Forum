@@ -42,6 +42,22 @@ a {
    color: #00B7FF;
 }
 
+input {
+   box-sizing: border-box;
+   outline: none;
+   border: 1px solid rgb(200, 200, 200);
+   border-radius: 2px;
+}
+input:focus {
+   border: 1px solid #ff4444;
+}
+
+button {
+   border: 1px solid rgb(200, 200, 200);
+   outline: none;
+   transition: .2s background-color cubic-bezier(0, 0, 0.23, 1.11);
+}
+
 .ellipsis {
    text-overflow: ellipsis;
    white-space: nowrap;
