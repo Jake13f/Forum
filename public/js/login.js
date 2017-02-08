@@ -1,4 +1,9 @@
 $(function() {
+   // ENTER key event on the input to trigger the login option easily
+   $(".login-block input").on('keyup', function (e) {
+      if(e.keyCode == 13) $("#login-btn").click();
+   });
+
    // Events
    $("#login-btn").on('click', function (e) {
       var credentials = {

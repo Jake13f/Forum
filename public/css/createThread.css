@@ -29,13 +29,14 @@
    text-decoration: none;
 }
 #finalize button {
-   width: 100px;
-   height: 35px;
+   width: 150px;
+   height: 30px;
 
-   font-size: 18px;
-   color: white;
+   font-size: 1.1em;
+   color: #fff;
    background-color: rgb(255, 0, 0);
-   border-radius: 3px;
+   border: none;
+   cursor: pointer;
 }
 #finalize button:hover {
    background-color: rgb(225, 0, 0);

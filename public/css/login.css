@@ -8,8 +8,8 @@
    margin: 0 auto;
    padding: 30px 10px;
 
-   border-radius: 5px;
-   border: 1px solid #000000;
+   border: 1px solid rgb(200, 200, 200);
+   border-radius: 2px;
    background-color: #f7f7f7;
 
    text-align: center;
@@ -28,25 +28,17 @@
    text-align: center;
    line-height: 30px;
    font-size: 20px;
-
-   border-radius: 5px;
-   border: 1px solid #000000;
-   outline: none;
 }
 .login-block button {
    width: 300px;
    line-height: 30px;
    font-size: 15px;
 
-   color: white;
-   border-radius: 5px;
-   border: 1px solid #000000;
-   background-color: rgb(73, 68, 255);
-   outline: none;
-
-   transition: .2s background-color linear;
+   color: #fff;
+   border: none;
+   background-color: rgb(255, 0, 0);
+   cursor: pointer;
 }
 .login-block button:hover {
-   background-color: #14f11d;
-   cursor: pointer;
+   background-color: rgb(225, 0, 0);
 }
