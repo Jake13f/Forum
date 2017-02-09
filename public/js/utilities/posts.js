@@ -1,3 +1,12 @@
+// Combine code tags from quill to properly display
+// </code>\n\n<code> replacing them with nothing so the second tag closing
+// will close the entirety
+// @param markup - the string containing the html markup
+// @param return - a string with the combined code tags
+function combineCodeTags (markup) {
+   return markup.replace(/<\/code>(\n+)<code>/g, '$1');
+}
+
 // Convert a delta markup object to markup
 // @param delta - the delta object
 // @return - a string with markup html

@@ -37,6 +37,7 @@ $(function() {
          });
 
          text = htmlArr.join('').slice(0,-1); // Convert to string and remove last \n
+         text = combineCodeTags(text);
 
          // There is text and its in the reasonable length
          submitPost(text, function (success, error) {
