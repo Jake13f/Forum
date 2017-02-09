@@ -21,11 +21,24 @@ $(function() {
    // Events //
    // ****** //
    $('#quillArea #submitPost').on('click', function () {
+      var text = '';
       var length = quill.getLength();
-      var text = quill.getText().slice(0,-1); // Remove off the \n at the end of quill text
+      var htmlArr = [];
+      var deltas = quill.getContents().ops;
+
 
       if (length > 1 && length <= 1000) {
-         // There is data and its in the reasonable range
+         // Build up the html array with proper html
+         deltas.forEach(function (delta, index) {
+            // Add code block style
+            if (index > 0 && delta.attributes && delta.attributes['code-block']) htmlArr[index - 1] = "<code>"+htmlArr[index - 1]+"</code>";
+
+            htmlArr.push(deltaHtml(delta));
+         });
+
+         text = htmlArr.join('').slice(0,-1); // Convert to string and remove last \n
+
+         // There is text and its in the reasonable length
          submitPost(text, function (success, error) {
             if (success)
                window.location.reload(); // Reload the page
