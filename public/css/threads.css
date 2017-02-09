@@ -19,7 +19,7 @@
 }
 #threads tbody tr {
    color: #000;
-   transition: .1s background-color cubic-bezier(0, 0, 0.23, 1.11), .2s color cubic-bezier(0, 0, 0.23, 1.11);
+   transition: .1s background-color cubic-bezier(0, 0, 0.23, 1.11), .1s color cubic-bezier(0, 0, 0.23, 1.11);
 }
 #threads tbody tr:nth-child(even) {
    background-color: #f5f5f5;
